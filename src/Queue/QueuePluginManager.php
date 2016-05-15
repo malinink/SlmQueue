@@ -3,12 +3,16 @@
 namespace SlmQueue\Queue;
 
 use Zend\ServiceManager\AbstractPluginManager;
+use Zend\Mvc\Controller\Plugin\PluginInterface;
+use SlmQueue\Controller\Plugin\Plugin;
 
 /**
  * QueuePluginManager
  */
-class QueuePluginManager extends AbstractPluginManager
+class QueuePluginManager extends AbstractPluginManager implements PluginInterface
 {
+    use Plugin;
+
     /**
      * {@inheritDoc}
      */

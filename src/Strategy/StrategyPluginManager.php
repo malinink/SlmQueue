@@ -4,12 +4,16 @@ namespace SlmQueue\Strategy;
 
 use SlmQueue\Exception\RuntimeException;
 use Zend\ServiceManager\AbstractPluginManager;
+use Zend\Mvc\Controller\Plugin\PluginInterface;
+use SlmQueue\Controller\Plugin\Plugin;
 
 /**
  * StrategyPluginManager
  */
-class StrategyPluginManager extends AbstractPluginManager
+class StrategyPluginManager extends AbstractPluginManager implements PluginInterface
 {
+    use Plugin;
+
     /**
      * @var bool
      */

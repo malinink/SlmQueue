@@ -3,12 +3,16 @@
 namespace SlmQueue\Job;
 
 use Zend\ServiceManager\AbstractPluginManager;
+use Zend\Mvc\Controller\Plugin\PluginInterface;
+use SlmQueue\Controller\Plugin\Plugin;
 
 /**
  * JobPluginManager
  */
-class JobPluginManager extends AbstractPluginManager
+class JobPluginManager extends AbstractPluginManager implements PluginInterface
 {
+    use Plugin;
+
     /**
      * @var bool
      */
