@@ -23,6 +23,7 @@ class LogJobStrategyFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        $container = $container->getServiceLocator();
         $strategy = new LogJobStrategy($container->get('console'), $this->options);
 
         return $strategy;

@@ -18,6 +18,7 @@ class AttachQueueListenersStrategyFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        $container = $container->getServiceLocator();
         $pluginManager  = $container->get(StrategyPluginManager::class);
         $config         = $container->get('config');
         $strategyConfig = $config['slm_queue']['worker_strategies']['queues'];
